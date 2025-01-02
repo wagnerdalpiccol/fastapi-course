@@ -14,7 +14,7 @@ def perform_translation(task_id:int, text: str, languages: list,db: Session):
     for lang in languages:
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-4",
+                model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": f"You are a helpful assistant that translate text into {lang}."},
                     {"role": "user", "content": text}
